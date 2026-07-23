@@ -1819,3 +1819,1176 @@
     "UpdateAccountContent": true
   }
 }
+
+# Get Accounts - {{base_url}}/PasswordVault/API/Accounts
+- GET METHOD
+ - {
+    "value": [
+        {
+            "categoryModificationTime": 1780069406,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "CyberArk_Test_Supriya",
+            "id": "59_3",
+            "name": "Operating System-kpmgtest_domainaccounts-kpmgtest.local-in-svc-supriya",
+            "address": "kpmgtest.local",
+            "userName": "in-svc-supriya",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "(CPM)MaxRetries",
+                "status": "failure",
+                "lastModifiedTime": 1780042160
+            },
+            "createdTime": 1780042160
+        },
+        {
+            "categoryModificationTime": 1761316837,
+            "platformId": "",
+            "safeName": "cyberark-connec_Accounts",
+            "id": "30_3",
+            "name": "PluginManagerUser",
+            "address": "172.17.0.4",
+            "userName": "PluginManagerUser",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1766737104
+            },
+            "createdTime": 1761316837
+        },
+        {
+            "categoryModificationTime": 1771406736,
+            "platformId": "WinDomain",
+            "safeName": "cyberark-connec",
+            "id": "26_7",
+            "name": "Operating System-WinDomain-kpmg-testuser01",
+            "address": "kpmg",
+            "userName": "testuser01",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmg"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1771405651
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "192.168.10.15;192.168.10.16;192.168.10.17",
+                "accessRestrictedToRemoteMachines": false
+            },
+            "createdTime": 1771405467
+        },
+        {
+            "categoryModificationTime": 1776072774,
+            "platformId": "WinServerLocal",
+            "safeName": "KPMG-Accounts",
+            "id": "35_4",
+            "name": "admin01",
+            "address": "cyberark-connec",
+            "userName": "admin01",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "cyberark-connec"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1769598588
+            },
+            "createdTime": 1761323254
+        },
+        {
+            "categoryModificationTime": 1776083015,
+            "platformId": "WinServerLocal",
+            "safeName": "KPMG-Accounts",
+            "id": "35_23",
+            "name": "cyberarkadmin",
+            "address": "172.17.0.5",
+            "userName": "cyberarkadmin",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": ".\\"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "status": "success",
+                "lastModifiedTime": 1776083014
+            },
+            "createdTime": 1776073449
+        },
+        {
+            "categoryModificationTime": 1761318956,
+            "platformId": "KPMGSNOWDom",
+            "safeName": "KPMG-Accounts",
+            "id": "35_3",
+            "name": "Operating System-KPMGSNOWDom-kpmg.com-vineet",
+            "address": "kpmg.com",
+            "userName": "vineet",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1761318955
+            },
+            "createdTime": 1761318955
+        },
+        {
+            "categoryModificationTime": 1781511732,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "KPMG-Accounts",
+            "id": "35_26",
+            "name": "Operating System-kpmgtest_domainaccounts-kpmgtest.local-in-svc-tejasnibrad",
+            "address": "kpmgtest.local",
+            "userName": "in-svc-tejasnibrad",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "status": "success",
+                "lastModifiedTime": 1781511731,
+                "lastReconciledTime": 1781511732
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "CA.kpmgtest.local;wintest.kpmgtest.local;cyberark-connec.kpmgtest.local;Target-Win.kpmgtest.local",
+                "accessRestrictedToRemoteMachines": false
+            },
+            "createdTime": 1781253528
+        },
+        {
+            "categoryModificationTime": 1775732297,
+            "platformId": "UnixSSH",
+            "safeName": "KPMG-Accounts",
+            "id": "35_22",
+            "name": "Operating System-UnixSSH-ec2-34-236-151-100.compute-1.amazonaws.com-ec2-user",
+            "address": "ec2-3-235-223-231.compute-1.amazonaws.com",
+            "userName": "ec2-user",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1775731653
+            },
+            "createdTime": 1775731653
+        },
+        {
+            "categoryModificationTime": 1770293591,
+            "platformId": "WinDomain",
+            "safeName": "KPMG-Accounts",
+            "id": "35_17",
+            "name": "Operating System-WinDomain-jublcorp.com-v-omkar.gupta4_rw",
+            "address": "jublcorp.com",
+            "userName": "v-omkar.gupta4_rw",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1770293590
+            },
+            "createdTime": 1770293590
+        },
+        {
+            "categoryModificationTime": 1768309826,
+            "platformId": "WinServerLocal",
+            "safeName": "KPMG-Accounts",
+            "id": "35_12",
+            "name": "Operating System-WindowsServerLocalAccount-Test-172.16.0.5-azureadmin",
+            "address": "20.207.152.236",
+            "userName": "azureadmin",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1768306518
+            },
+            "createdTime": 1768306518
+        },
+        {
+            "categoryModificationTime": 1765367514,
+            "platformId": "WinServerLocal",
+            "safeName": "KPMG-Accounts",
+            "id": "35_9",
+            "name": "Operating System-WinServerLocal-172.17.0.4-PAM_admin",
+            "address": "172.17.0.4",
+            "userName": "PAM_admin",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1765367514
+            },
+            "createdTime": 1765367514
+        },
+        {
+            "categoryModificationTime": 1769591911,
+            "platformId": "WinServerLocal",
+            "safeName": "KPMG-Accounts",
+            "id": "35_13",
+            "name": "Operating System-WinServerLocal-172.17.0.4-PAM_Recon",
+            "address": "172.17.0.4",
+            "userName": "PAM_Recon",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "cyberark-connec"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "(CPM)UnrecoverableError",
+                "status": "failure",
+                "lastModifiedTime": 1769591911,
+                "lastVerifiedTime": 1769591107
+            },
+            "createdTime": 1769590855
+        },
+        {
+            "categoryModificationTime": 1782707198,
+            "platformId": "WinServerLocal",
+            "safeName": "KPMG-Accounts",
+            "id": "35_14",
+            "name": "Operating System-WinServerLocal-172.17.0.4-TestUser",
+            "address": "cyberark-connec",
+            "userName": "TestUser",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "cyberark-connec"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "status": "success",
+                "lastModifiedTime": 1774948053,
+                "lastVerifiedTime": 1774948364
+            },
+            "createdTime": 1769592148
+        },
+        {
+            "categoryModificationTime": 1770291329,
+            "platformId": "WinServerLocal",
+            "safeName": "KPMG-Accounts",
+            "id": "35_16",
+            "name": "Operating System-WinServerLocal-192.168.0.55-admin01",
+            "address": "192.168.0.55",
+            "userName": "admin01",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1770291328
+            },
+            "createdTime": 1770291328
+        },
+        {
+            "categoryModificationTime": 1782699053,
+            "platformId": "WinServerLocal",
+            "safeName": "KPMG-Accounts",
+            "id": "35_11",
+            "name": "Operating System-WinServerLocal-192.168.7.108-testuser",
+            "address": "192.168.7.107",
+            "userName": "testuser",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "(CPM)MaxRetries",
+                "status": "failure",
+                "lastModifiedTime": 1767770978
+            },
+            "createdTime": 1767770978
+        },
+        {
+            "categoryModificationTime": 1776081916,
+            "platformId": "WinServerLocal",
+            "safeName": "KPMG-Accounts",
+            "id": "35_24",
+            "name": "Operating System-WinServerLocal-20.207.145.169-administrator",
+            "address": "20.207.145.169",
+            "userName": "administrator",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "wintestpam"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "(CPM)UnrecoverableError",
+                "status": "failure",
+                "lastModifiedTime": 1776081916
+            },
+            "createdTime": 1776080081
+        },
+        {
+            "categoryModificationTime": 1780250665,
+            "platformId": "PSM-WebApp-Test",
+            "safeName": "KPMG-Accounts",
+            "id": "35_25",
+            "name": "Website-WebApp_Test-httpskpmg-testing.cyberark.cloud-mrunalnasare@kpmgtest.local",
+            "address": "https://kpmg-testing.cyberark.cloud",
+            "userName": "mrunalnasare@kpmgtest.local",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1780250349
+            },
+            "createdTime": 1780250349
+        },
+        {
+            "categoryModificationTime": 1779371504,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "kpmgtest_service_account",
+            "id": "57_3",
+            "name": "Operating System-kpmgtest_domainaccounts-kpmgtest.local-zsp_strongaccount",
+            "address": "kpmgtest.local",
+            "userName": "zsp_strongaccount",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1779371504
+            },
+            "createdTime": 1779371504
+        },
+        {
+            "categoryModificationTime": 1781180273,
+            "platformId": "MSSql",
+            "safeName": "kpmgtest_targetserver",
+            "id": "56_6",
+            "name": "Database-MSSql-172.17.0.4-root",
+            "address": "172.17.0.4",
+            "userName": "root",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "Port": "3306",
+                "Database": "mysql"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1780400274
+            },
+            "createdTime": 1780400274
+        },
+        {
+            "categoryModificationTime": 1781180290,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "kpmgtest_targetserver",
+            "id": "56_4",
+            "name": "Operating System-kpmgtest_domainaccounts-kpmgtest.local-in-svc-prathamesh",
+            "address": "kpmgtest.local",
+            "userName": "in-svc-prathamesh",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1779375932
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "172.17.0.4;172.17.0.6",
+                "accessRestrictedToRemoteMachines": true
+            },
+            "createdTime": 1779375932
+        },
+        {
+            "categoryModificationTime": 1781180302,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "kpmgtest_targetserver",
+            "id": "56_3",
+            "name": "Operating System-kpmgtest_domainaccounts-kpmgtest.local-in-svc-sahilgupta",
+            "address": "kpmgtest.local",
+            "userName": "in-svc-sahilgupta",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1779367506
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "172.17.0.4;172.17.0.5;172.17.0.6",
+                "accessRestrictedToRemoteMachines": true
+            },
+            "createdTime": 1779367506
+        },
+        {
+            "categoryModificationTime": 1781180198,
+            "platformId": "UnixSSH",
+            "safeName": "kpmgtest_targetserver",
+            "id": "56_5",
+            "name": "Operating System-UnixSSH-52.140.176.51-admin01",
+            "address": "52.140.176.51",
+            "userName": "admin01",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1780386236
+            },
+            "createdTime": 1780386236
+        },
+        {
+            "categoryModificationTime": 1782672800,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "kpmgtest_targetserver",
+            "id": "56_7",
+            "name": "sahil-test",
+            "address": "kpmgtest.local",
+            "userName": "sahil-test",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1782672800
+            },
+            "createdTime": 1782672800
+        },
+        {
+            "categoryModificationTime": 1781171187,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "KPMGTEST-Reconcile",
+            "id": "61_3",
+            "name": "Operating System-KPMG-Domain-Demo-kpmgtest.local-in-svc-reconcile",
+            "address": "kpmgtest.local",
+            "userName": "in-svc-reconcile",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1781170889
+            },
+            "createdTime": 1781170889
+        },
+        {
+            "categoryModificationTime": 1775732903,
+            "platformId": "UnixSSHKeys",
+            "safeName": "Linux",
+            "id": "49_7",
+            "name": "Operating System-UnixSSHKeys-ec2-3-90-88-239.compute-1.amazonaws.com-ec2-user",
+            "address": "ec2-3-90-88-239.compute-1.amazonaws.com",
+            "userName": "ec2-user",
+            "secretType": "key",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1775732902
+            },
+            "createdTime": 1775732902
+        },
+        {
+            "categoryModificationTime": 1774885815,
+            "platformId": "UnixSSHKeys",
+            "safeName": "Linux",
+            "id": "49_5",
+            "name": "Operating System-UnixSSHKeys-ec2-98-93-80-124.compute-1.amazonaws.com-ec2-user",
+            "address": "ec2-98-93-80-124.compute-1.amazonaws.com",
+            "userName": "ec2-user",
+            "secretType": "key",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "(CPM)MaxRetries",
+                "status": "failure",
+                "lastModifiedTime": 1774858511
+            },
+            "createdTime": 1774857996
+        },
+        {
+            "categoryModificationTime": 1774886099,
+            "platformId": "UnixSSHKeys",
+            "safeName": "Linux",
+            "id": "49_6",
+            "name": "Operating System-UnixSSHKeys-ec2-98-93-80-124.compute-1.amazonaws.com-ec2-user (1)",
+            "address": "ec2-98-93-80-124.compute-1.amazonaws.com",
+            "userName": "ec2-user",
+            "secretType": "key",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "(CPM)MaxRetries",
+                "status": "failure",
+                "lastModifiedTime": 1774858815
+            },
+            "createdTime": 1774858701
+        },
+        {
+            "categoryModificationTime": 1781517428,
+            "platformId": "Unix-Cred-Demo",
+            "safeName": "Linux-Shared",
+            "id": "62_3",
+            "name": "Operating System-UnixSSH-52.140.176.51-linuxuser1",
+            "address": "52.140.176.51",
+            "userName": "linuxuser1",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "UseSudoOnReconcile": "Yes"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "status": "success",
+                "lastModifiedTime": 1781517424,
+                "lastReconciledTime": 1781180362
+            },
+            "createdTime": 1781179532
+        },
+        {
+            "categoryModificationTime": 1759758319,
+            "platformId": "",
+            "safeName": "Notification Engine",
+            "id": "3_9",
+            "name": "ses-creds",
+            "userName": "AKIASY3PBFJKB6HYEOGD",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1759758319
+            },
+            "createdTime": 1759758319
+        },
+        {
+            "categoryModificationTime": 1763995155,
+            "platformId": "",
+            "safeName": "PasswordManager_Accounts",
+            "id": "47_3",
+            "name": "PluginManagerUser",
+            "address": "192.168.7.107",
+            "userName": "PluginManagerUser",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1763995155
+            },
+            "createdTime": 1763995155
+        },
+        {
+            "categoryModificationTime": 1779364809,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_12",
+            "name": "PSMAdmin_CA",
+            "address": "172.17.0.6",
+            "userName": "PSMAdminConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1779364809
+            },
+            "createdTime": 1779364809
+        },
+        {
+            "categoryModificationTime": 1761318751,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_8",
+            "name": "PSMAdmin_cyberark-connec",
+            "address": "172.17.0.4",
+            "userName": "PSMAdminConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1761318751
+            },
+            "createdTime": 1761318751
+        },
+        {
+            "categoryModificationTime": 1763997170,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_10",
+            "name": "PSMAdmin_INDCDMZARKCON",
+            "address": "192.168.7.107",
+            "userName": "PSMAdminConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1763997169
+            },
+            "createdTime": 1763997169
+        },
+        {
+            "categoryModificationTime": 1760006705,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_4",
+            "name": "PSMAdmin_VM1",
+            "address": "10.0.0.4",
+            "userName": "PSMAdminConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1760006705
+            },
+            "createdTime": 1760006705
+        },
+        {
+            "categoryModificationTime": 1760379867,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_6",
+            "name": "PSMAdmin_VM2",
+            "address": "10.0.0.4",
+            "userName": "PSMAdminConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1760379867
+            },
+            "createdTime": 1760379867
+        },
+        {
+            "categoryModificationTime": 1779364809,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_11",
+            "name": "PSMServer_CA",
+            "address": "172.17.0.6",
+            "userName": "PSMConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1779364809
+            },
+            "createdTime": 1779364809
+        },
+        {
+            "categoryModificationTime": 1761318751,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_7",
+            "name": "PSMServer_cyberark-connec",
+            "address": "172.17.0.4",
+            "userName": "PSMConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1761318751
+            },
+            "createdTime": 1761318751
+        },
+        {
+            "categoryModificationTime": 1763997169,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_9",
+            "name": "PSMServer_INDCDMZARKCON",
+            "address": "192.168.7.107",
+            "userName": "PSMConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1763997169
+            },
+            "createdTime": 1763997169
+        },
+        {
+            "categoryModificationTime": 1760006705,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_3",
+            "name": "PSMServer_VM1",
+            "address": "10.0.0.4",
+            "userName": "PSMConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1760006705
+            },
+            "createdTime": 1760006705
+        },
+        {
+            "categoryModificationTime": 1760379867,
+            "platformId": "",
+            "safeName": "PSM",
+            "id": "16_5",
+            "name": "PSMServer_VM2",
+            "address": "10.0.0.4",
+            "userName": "PSMConnect",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1760379867
+            },
+            "createdTime": 1760379867
+        },
+        {
+            "categoryModificationTime": 1782154800,
+            "platformId": "MySQL",
+            "safeName": "sahil-db",
+            "id": "67_3",
+            "name": "Database-MySQL-cyberark-connec-root",
+            "address": "cyberark-connec",
+            "userName": "root",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "Port": "3306",
+                "Database": "mysql"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1782154799
+            },
+            "createdTime": 1782154799
+        },
+        {
+            "categoryModificationTime": 1783412806,
+            "platformId": "MySQL",
+            "safeName": "Sahil",
+            "id": "53_6",
+            "name": "Database-MySQL-CA-sahilgupta@kpmgtest.local",
+            "address": "CA",
+            "userName": "sahilgupta",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1783412728
+            },
+            "createdTime": 1783412728
+        },
+        {
+            "categoryModificationTime": 1783416579,
+            "platformId": "MySQL",
+            "safeName": "Sahil",
+            "id": "53_5",
+            "name": "Database-MySQL-CA-sqluser",
+            "address": "CA",
+            "userName": "sqluser",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1783401829
+            },
+            "createdTime": 1783401829
+        },
+        {
+            "categoryModificationTime": 1782542932,
+            "platformId": "UnixSSHKeys",
+            "safeName": "Sahil",
+            "id": "53_4",
+            "name": "Operating System-UnixSSHKeys-ec2-13-126-254-19.ap-south-1.compute.amazonaws.com-ubuntu",
+            "address": "ec2-13-126-254-19.ap-south-1.compute.amazonaws.com",
+            "userName": "root",
+            "secretType": "key",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1782513926
+            },
+            "createdTime": 1782513926
+        },
+        {
+            "categoryModificationTime": 1779184232,
+            "platformId": "WinDomain",
+            "safeName": "Sahil",
+            "id": "53_3",
+            "name": "Operating System-WinDomain-172.17.0.6-cyberarkadmin",
+            "address": "172.17.0.6",
+            "userName": "cyberarkadmin",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "172.17.0.6"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1779184232
+            },
+            "createdTime": 1779184232
+        },
+        {
+            "categoryModificationTime": 1779260165,
+            "platformId": "WindowsServerLocalAccount-Test",
+            "safeName": "Saviynt Litmos Test",
+            "id": "54_3",
+            "name": "Operating System-WindowsServerLocalAccount-Test-httpssaviynt.litmos.comaccountLogin-shreyashpathak@kpmg.com",
+            "address": "https://saviynt.litmos.com/account/Login",
+            "userName": "shreyashpathak@kpmg.com",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1779260164
+            },
+            "createdTime": 1779260164
+        },
+        {
+            "platformId": "",
+            "safeName": "TelemetryConfig",
+            "id": "13_3",
+            "name": "salesforce_hash_key",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1781421286
+            },
+            "createdTime": 1759759679
+        },
+        {
+            "categoryModificationTime": 1760380943,
+            "platformId": "WindowsServerLocalAccount-Test",
+            "safeName": "Test Safe_RDP",
+            "id": "22_4",
+            "name": "Operating System-WindowsServerLocalAccount-Test-20.193.128.184-Azureadmin1",
+            "address": "20.193.128.184",
+            "userName": "Azureadmin1",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "20.193.128.184"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1760380943
+            },
+            "createdTime": 1760380943
+        },
+        {
+            "categoryModificationTime": 1760380851,
+            "platformId": "WindowsServerLocalAccount-Test",
+            "safeName": "Test Safe_RDP",
+            "id": "22_3",
+            "name": "Operating System-WindowsServerLocalAccount-Test-4.213.182.40-Azureadmin",
+            "address": "4.213.182.40",
+            "userName": "Azureadmin",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "20.193.128.184"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1760007476
+            },
+            "createdTime": 1760007476
+        },
+        {
+            "categoryModificationTime": 1760456078,
+            "platformId": "WebApp_Test",
+            "safeName": "Test Safe_Web App",
+            "id": "15_3",
+            "name": "Website-WebApp_Test-httpsacb4709.id.cyberark.cloud-vineet.vij@cyberark.cloud.43372",
+            "address": "kpmg-testing.cyberark.cloud",
+            "userName": "vineet.vij@cyberark.cloud.43372",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1759842605
+            },
+            "createdTime": 1759842605
+        },
+        {
+            "categoryModificationTime": 1769581996,
+            "platformId": "WindowsServerLocalAccount-Test",
+            "safeName": "TestApp",
+            "id": "52_3",
+            "name": "testapp",
+            "address": "cyberark-connec",
+            "userName": "testapp",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1769581787
+            },
+            "createdTime": 1769581787
+        },
+        {
+            "categoryModificationTime": 1769584296,
+            "platformId": "WebApp_Test",
+            "safeName": "TestApp",
+            "id": "52_4",
+            "name": "Website-WebApp_Test-auth.in.alero-aleroservice",
+            "address": "auth.in.alero",
+            "userName": "aleroservice",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1769584296
+            },
+            "createdTime": 1769584296
+        },
+        {
+            "categoryModificationTime": 1781000452,
+            "platformId": "WebApp_Test",
+            "safeName": "Test-SNOW",
+            "id": "48_5",
+            "name": "Website-WebApp_Test-alero-Alero_user",
+            "address": "alero",
+            "userName": "Alero_user",
+            "secretType": "password",
+            "platformAccountProperties": {},
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "No Reason",
+                "lastModifiedTime": 1781000452
+            },
+            "createdTime": 1781000452
+        },
+        {
+            "categoryModificationTime": 1781523907,
+            "platformId": "KPMG-Domain-Demo-EA",
+            "safeName": "Windows Domain Account_ea",
+            "id": "66_3",
+            "name": "Operating System-KPMG-Domain-Demo-EA-kpmgtest.local-in-svc-shreyash-ea",
+            "address": "kpmgtest.local",
+            "userName": "in-svc-shared-ea",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "status": "success",
+                "lastModifiedTime": 1781523906,
+                "lastReconciledTime": 1781259046,
+                "lastVerifiedTime": 1781259355
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "CA.kpmgtest.local;wintest.kpmgtest.local;cyberark-connec.kpmgtest.local",
+                "accessRestrictedToRemoteMachines": false
+            },
+            "createdTime": 1781509831
+        },
+        {
+            "categoryModificationTime": 1781414363,
+            "platformId": "KPMG-Domain-Demo",
+            "safeName": "Windows Domain Account_John",
+            "id": "64_3",
+            "name": "Operating System-KPMG-Domain-Demo-wintest.kpmgtest.local-in-svc-john",
+            "address": "wintest.kpmgtest.local",
+            "userName": "in-svc-john",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "wintest.kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1781414362
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "wintest.kpmgtest.local;CA.kpmgtest.local;cyberark-connec.kpmgtest.local",
+                "accessRestrictedToRemoteMachines": false
+            },
+            "createdTime": 1781414362
+        },
+        {
+            "categoryModificationTime": 1781544733,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "Windows Domain Account_Mike",
+            "id": "63_3",
+            "name": "Operating System-KPMG-Domain-Demo-kpmgtest.local-in-svc-mike",
+            "address": "kpmgtest.local",
+            "userName": "in-svc-mike",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": false,
+                "manualManagementReason": "(CPM)MaxRetries",
+                "status": "failure",
+                "lastModifiedTime": 1781544733,
+                "lastReconciledTime": 1781512215
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "CA.kpmgtest.local;wintest.kpmgtest.local;cyberark-connec.kpmgtest.local",
+                "accessRestrictedToRemoteMachines": false
+            },
+            "createdTime": 1781414226
+        },
+        {
+            "categoryModificationTime": 1781511801,
+            "platformId": "KPMG-Domain-Demo",
+            "safeName": "WindowsDomainaccount_shared",
+            "id": "65_3",
+            "name": "Operating System-WinDomain-kpmgtest.local-in-svc-shared",
+            "address": "kpmgtest.local",
+            "userName": "in-svc-shared",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1781415350
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "CA.kpmgtest.local;wintest.kpmgtest.local;cyberark-connec.kpmgtest.local",
+                "accessRestrictedToRemoteMachines": false
+            },
+            "createdTime": 1781415350
+        },
+        {
+            "categoryModificationTime": 1781257145,
+            "platformId": "KPMG-Domain-Demo",
+            "safeName": "Windows-Domain-Shreyash",
+            "id": "60_3",
+            "name": "Operating System-KPMG-Domain-Demo-kpmgtest.local-in-svc-shreyash",
+            "address": "kpmgtest.local",
+            "userName": "in-svc-shreyash",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "status": "success",
+                "lastModifiedTime": 1781257144,
+                "lastReconciledTime": 1781241299,
+                "lastVerifiedTime": 1781172858
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "CA.kpmgtest.local;wintest.kpmgtest.local;cyberark-connec.kpmgtest.local",
+                "accessRestrictedToRemoteMachines": false
+            },
+            "createdTime": 1781170314
+        },
+        {
+            "categoryModificationTime": 1781269516,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "Windows-Domain-Shreyash",
+            "id": "60_5",
+            "name": "Operating System-kpmgtest_domainaccounts-kpmgtest.local-in-admin-shreyash",
+            "address": "kpmgtest.local",
+            "userName": "in-admin-shreyash",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "status": "success",
+                "lastModifiedTime": 1781269515,
+                "lastReconciledTime": 1781269515
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "CA.kpmgtest.local;wintest.kpmgtest.local;cyberark-connec.kpmgtest.local",
+                "accessRestrictedToRemoteMachines": false
+            },
+            "createdTime": 1781269435
+        },
+        {
+            "categoryModificationTime": 1782387282,
+            "platformId": "MySQL",
+            "safeName": "ZSP-Tejas",
+            "id": "58_5",
+            "name": "Database-MySQL-target-win.kpmgtest.local-target-scanner",
+            "address": "target-win.kpmgtest.local",
+            "userName": "target-scanner",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "Port": "3306",
+                "Database": "mysql"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1782387281
+            },
+            "remoteMachinesAccess": {
+                "remoteMachines": "target-win.kpmgtest.local",
+                "accessRestrictedToRemoteMachines": false
+            },
+            "createdTime": 1782387281
+        },
+        {
+            "categoryModificationTime": 1779856563,
+            "platformId": "kpmgtest_domainaccounts",
+            "safeName": "ZSP-Tejas",
+            "id": "58_3",
+            "name": "Operating System-kpmgtest_domainaccounts-kpmgtest.local-zsp-sa-tejas",
+            "address": "kpmgtest.local",
+            "userName": "zsp-sa-tejas",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "kpmgtest.local"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1779856563
+            },
+            "createdTime": 1779856563
+        },
+        {
+            "categoryModificationTime": 1782298969,
+            "platformId": "WinServerLocal",
+            "safeName": "ZSP-Tejas",
+            "id": "58_4",
+            "name": "Operating System-WinServerLocal-target-win.kpmgtest.local-admin01",
+            "address": "target-win.kpmgtest.local",
+            "userName": "admin01",
+            "secretType": "password",
+            "platformAccountProperties": {
+                "LogonDomain": "target-win"
+            },
+            "secretManagement": {
+                "automaticManagementEnabled": true,
+                "lastModifiedTime": 1782298969
+            },
+            "createdTime": 1782298969
+        }
+    ],
+    "count": 62
+}
+# Create Account - {{base_url}}/PasswordVault/API/Accounts
+- POST METHOD
+- body : {
+  "name": "sahil-test",
+  "address": "kpmgtest.local",
+  "userName": "sahil-test",
+  "platformId": "kpmgtest_domainaccounts",
+  "safeName": "kpmgtest_targetserver",
+  "secretType": "password",
+  "secret": "Password@123",
+  "platformAccountProperties": {}
+}
+- response : {
+    "categoryModificationTime": 1783665771,
+    "platformId": "kpmgtest_domainaccounts",
+    "safeName": "kpmgtest_targetserver",
+    "id": "56_8",
+    "name": "soham-test",
+    "address": "kpmgtest.local",
+    "userName": "sahil-test",
+    "secretType": "password",
+    "secretManagement": {
+        "automaticManagementEnabled": true,
+        "lastModifiedTime": 1783665771
+    },
+    "createdTime": 1783665771
+}
+
+# Reconcile - {{base_url}}/PasswordVault/API/Accounts/{account_id}/Reconcile
+
+- POST METHOD
