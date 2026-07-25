@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 4444;
 const apiRoutes = require("./routes/api.routes");
+const authRoutes = require("./routes/auth.routes");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("/auth", authRoutes);
 app.use("/api", apiRoutes);
 
 mongoose
@@ -25,3 +27,4 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
