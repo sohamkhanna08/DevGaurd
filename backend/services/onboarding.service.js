@@ -362,7 +362,7 @@ const addUserToSafe = async (accessToken, safeName, username) => {
 };
 
 // Account Provisioning
-const checkAccountExists = async (accessToken, accountData) => {
+const checkAccountExists = async (accessToken, accountData, safeName) => {
   try {
     const url = `${process.env.CYBERARK_BASE_URL}/PasswordVault/API/Accounts`;
 
@@ -379,7 +379,9 @@ const checkAccountExists = async (accessToken, accountData) => {
       return null;
     }
 
-    const user = data.value.find((u) => u.userName === accountData.username);
+    const user = data.value.find(
+      (u) => u.userName === accountData.username && u.safeName === safeName,
+    );
 
     if (!user) {
       return null;
@@ -572,6 +574,7 @@ const onboardUser = async (userData) => {
   const existingAccount = await checkAccountExists(
     accessToken,
     userData.account,
+    safeName,
   );
 
   if (existingAccount) {
