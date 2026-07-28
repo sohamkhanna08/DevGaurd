@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   GitFork,
   CheckCircle2,
@@ -15,11 +15,11 @@ import {
   FileCode,
   Layers,
   Sparkles,
-  Info,
-} from "lucide-react";
+  Info
+} from 'lucide-react';
 
 export const WorkflowPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"visual" | "ascii">("visual");
+  const [activeTab, setActiveTab] = useState<'visual' | 'ascii'>('visual');
   const [copiedFlowchart, setCopiedFlowchart] = useState(false);
   const [copiedArchitecture, setCopiedArchitecture] = useState(false);
 
@@ -27,7 +27,7 @@ export const WorkflowPage: React.FC = () => {
         │
         ▼
 Check User Exists in CyberArk?
-  ┌──────────────┐
+ ┌──────────────┐
 No │            │ Yes
  ▼              ▼
 Create User      Continue
@@ -87,9 +87,9 @@ Provision Complete`;
   ▼
  Windows Server`;
 
-  const handleCopy = (text: string, type: "flowchart" | "arch") => {
+  const handleCopy = (text: string, type: 'flowchart' | 'arch') => {
     navigator.clipboard.writeText(text);
-    if (type === "flowchart") {
+    if (type === 'flowchart') {
       setCopiedFlowchart(true);
       setTimeout(() => setCopiedFlowchart(false), 2000);
     } else {
@@ -108,27 +108,24 @@ Provision Complete`;
               Architecture & Logic
             </span>
             <span className="text-xs text-slate-400">|</span>
-            <span className="text-xs font-semibold text-slate-500">
-              v2.4 Enterprise
-            </span>
+            <span className="text-xs font-semibold text-slate-500">v2.4 Enterprise</span>
           </div>
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight font-sans mt-1">
             Application Workflow & Provisioning Architecture
           </h1>
           <p className="text-xs text-slate-500 mt-1">
-            Comprehensive decision flow, step-by-step CyberArk API
-            orchestration, and privileged access safe hierarchy.
+            Comprehensive decision flow, step-by-step CyberArk API orchestration, and privileged access safe hierarchy.
           </p>
         </div>
 
         {/* View Switcher */}
         <div className="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 shrink-0 text-xs font-semibold">
           <button
-            onClick={() => setActiveTab("visual")}
+            onClick={() => setActiveTab('visual')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-all ${
-              activeTab === "visual"
-                ? "bg-white text-[#00205F] shadow-xs font-bold"
-                : "text-slate-600 hover:text-slate-900"
+              activeTab === 'visual'
+                ? 'bg-white text-[#00205F] shadow-xs font-bold'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <Layers className="w-3.5 h-3.5 text-[#005DB6]" />
@@ -136,11 +133,11 @@ Provision Complete`;
           </button>
 
           <button
-            onClick={() => setActiveTab("ascii")}
+            onClick={() => setActiveTab('ascii')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md transition-all ${
-              activeTab === "ascii"
-                ? "bg-white text-[#00205F] shadow-xs font-bold"
-                : "text-slate-600 hover:text-slate-900"
+              activeTab === 'ascii'
+                ? 'bg-white text-[#00205F] shadow-xs font-bold'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <FileCode className="w-3.5 h-3.5 text-[#005DB6]" />
@@ -156,29 +153,20 @@ Provision Complete`;
             <Sparkles className="w-4 h-4 text-blue-300" />
             <span>Automated Privilege Onboarding Engine</span>
           </div>
-          <h2 className="text-lg font-bold text-white">
-            How This CyberArk PAM Integration Works
-          </h2>
+          <h2 className="text-lg font-bold text-white">How This CyberArk PAM Integration Works</h2>
           <p className="text-xs text-blue-100/90 leading-relaxed">
-            When a request is submitted via the User Onboarding form, this
-            application initiates a multi-stage sequential verification and
-            creation workflow against CyberArk PAM REST APIs. It ensures
-            non-duplication of identities, assigns Privilege Cloud roles,
-            provisions secure Safes, attaches vault permissions, and provisions
-            CPM-managed endpoint credentials.
+            When a request is submitted via the User Onboarding form, this application initiates a multi-stage sequential verification and creation workflow against CyberArk PAM REST APIs. It ensures non-duplication of identities, assigns Privilege Cloud roles, provisions secure Safes, attaches vault permissions, and provisions CPM-managed endpoint credentials.
           </p>
         </div>
         <div className="shrink-0 flex items-center gap-3 bg-white/10 p-3 rounded-md border border-white/20 backdrop-blur-xs text-xs font-mono">
           <div>
-            <div className="text-[10px] text-blue-200 uppercase">
-              Target Engine
-            </div>
+            <div className="text-[10px] text-blue-200 uppercase">Target Engine</div>
             <div className="font-bold text-white">CyberArk Privilege Cloud</div>
           </div>
         </div>
       </div>
 
-      {activeTab === "visual" ? (
+      {activeTab === 'visual' ? (
         <div className="space-y-10">
           {/* Section 1: Provisioning Workflow Chart */}
           <section className="bg-white border border-[#DCE1E6] rounded-lg p-6 shadow-xs space-y-6">
@@ -192,8 +180,7 @@ Provision Complete`;
                     1. Provisioning Decision Flowchart
                   </h3>
                   <p className="text-xs text-slate-500">
-                    Step-by-step decision tree executed during automated account
-                    onboarding.
+                    Step-by-step decision tree executed during automated account onboarding.
                   </p>
                 </div>
               </div>
@@ -217,16 +204,10 @@ Provision Complete`;
               {/* Step 1: Check User Exists */}
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#00338D] font-mono">
-                    STEP 1
-                  </span>
-                  <span className="text-[11px] text-slate-500 font-mono">
-                    GET /PasswordVault/API/Users
-                  </span>
+                  <span className="text-xs font-bold text-[#00338D] font-mono">STEP 1</span>
+                  <span className="text-[11px] text-slate-500 font-mono">GET /PasswordVault/API/Users</span>
                 </div>
-                <div className="font-bold text-xs text-slate-900">
-                  Check User Exists in CyberArk?
-                </div>
+                <div className="font-bold text-xs text-slate-900">Check User Exists in CyberArk?</div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
                   <div className="bg-amber-50 border border-amber-200 rounded-md p-3 text-xs space-y-1">
@@ -235,11 +216,7 @@ Provision Complete`;
                       <span>NO → Create User</span>
                     </div>
                     <p className="text-[11px] text-amber-700">
-                      Calls{" "}
-                      <code className="font-mono bg-amber-100/80 px-1 rounded">
-                        POST /Users
-                      </code>{" "}
-                      to register new identity with email & login name.
+                      Calls <code className="font-mono bg-amber-100/80 px-1 rounded">POST /Users</code> to register new identity with email & login name.
                     </p>
                   </div>
 
@@ -249,8 +226,7 @@ Provision Complete`;
                       <span>YES → Continue</span>
                     </div>
                     <p className="text-[11px] text-emerald-700">
-                      User identity found. Fetch assigned privileges and
-                      validate account metadata.
+                      User identity found. Fetch assigned privileges and validate account metadata.
                     </p>
                   </div>
                 </div>
@@ -264,16 +240,10 @@ Provision Complete`;
               {/* Step 2: Privilege Cloud Role */}
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#00338D] font-mono">
-                    STEP 2
-                  </span>
-                  <span className="text-[11px] text-slate-500 font-mono">
-                    GET /PasswordVault/API/UserRoles
-                  </span>
+                  <span className="text-xs font-bold text-[#00338D] font-mono">STEP 2</span>
+                  <span className="text-[11px] text-slate-500 font-mono">GET /PasswordVault/API/UserRoles</span>
                 </div>
-                <div className="font-bold text-xs text-slate-900">
-                  Is Privilege Cloud Role Assigned?
-                </div>
+                <div className="font-bold text-xs text-slate-900">Is Privilege Cloud Role Assigned?</div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
                   <div className="bg-amber-50 border border-amber-200 rounded-md p-3 text-xs space-y-1">
@@ -282,8 +252,7 @@ Provision Complete`;
                       <span>NO → Assign Role</span>
                     </div>
                     <p className="text-[11px] text-amber-700">
-                      Grant Privilege Cloud User / Basic User privileges via
-                      Identity API.
+                      Grant Privilege Cloud User / Basic User privileges via Identity API.
                     </p>
                   </div>
 
@@ -307,16 +276,10 @@ Provision Complete`;
               {/* Step 3: Check Safe Exists */}
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#00338D] font-mono">
-                    STEP 3
-                  </span>
-                  <span className="text-[11px] text-slate-500 font-mono">
-                    GET /PasswordVault/API/Safes/{"{safeName}"}
-                  </span>
+                  <span className="text-xs font-bold text-[#00338D] font-mono">STEP 3</span>
+                  <span className="text-[11px] text-slate-500 font-mono">GET /PasswordVault/API/Safes/{'{safeName}'}</span>
                 </div>
-                <div className="font-bold text-xs text-slate-900">
-                  Check Safe Exists?
-                </div>
+                <div className="font-bold text-xs text-slate-900">Check Safe Exists?</div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
                   <div className="bg-amber-50 border border-amber-200 rounded-md p-3 text-xs space-y-1">
@@ -325,11 +288,7 @@ Provision Complete`;
                       <span>NO → Create Safe</span>
                     </div>
                     <p className="text-[11px] text-amber-700">
-                      Create container (e.g.{" "}
-                      <code className="font-mono bg-amber-100/80 px-1 rounded">
-                        SAFE_PROD_WINDOWS
-                      </code>
-                      ) with 7-day retention & CPM enabled.
+                      Create container (e.g. <code className="font-mono bg-amber-100/80 px-1 rounded">SAFE_PROD_WINDOWS</code>) with 7-day retention & CPM enabled.
                     </p>
                   </div>
 
@@ -353,16 +312,10 @@ Provision Complete`;
               {/* Step 4: Is User a Safe Member? */}
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#00338D] font-mono">
-                    STEP 4
-                  </span>
-                  <span className="text-[11px] text-slate-500 font-mono">
-                    GET /PasswordVault/API/Safes/{"{safeName}"}/Members
-                  </span>
+                  <span className="text-xs font-bold text-[#00338D] font-mono">STEP 4</span>
+                  <span className="text-[11px] text-slate-500 font-mono">GET /PasswordVault/API/Safes/{'{safeName}'}/Members</span>
                 </div>
-                <div className="font-bold text-xs text-slate-900">
-                  Is User a Safe Member?
-                </div>
+                <div className="font-bold text-xs text-slate-900">Is User a Safe Member?</div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
                   <div className="bg-amber-50 border border-amber-200 rounded-md p-3 text-xs space-y-1">
@@ -371,8 +324,7 @@ Provision Complete`;
                       <span>NO → Add User to Safe</span>
                     </div>
                     <p className="text-[11px] text-amber-700">
-                      Grant Retrieve, UsePassword, and AccessWithoutConfirmation
-                      permissions.
+                      Grant Retrieve, UsePassword, and AccessWithoutConfirmation permissions.
                     </p>
                   </div>
 
@@ -396,16 +348,10 @@ Provision Complete`;
               {/* Step 5: Managed Account & CPM */}
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#00338D] font-mono">
-                    STEP 5
-                  </span>
-                  <span className="text-[11px] text-slate-500 font-mono">
-                    POST /PasswordVault/API/Accounts
-                  </span>
+                  <span className="text-xs font-bold text-[#00338D] font-mono">STEP 5</span>
+                  <span className="text-[11px] text-slate-500 font-mono">POST /PasswordVault/API/Accounts</span>
                 </div>
-                <div className="font-bold text-xs text-slate-900">
-                  Check Managed Account Exists?
-                </div>
+                <div className="font-bold text-xs text-slate-900">Check Managed Account Exists?</div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
                   <div className="bg-amber-50 border border-amber-200 rounded-md p-3 text-xs space-y-1">
@@ -414,8 +360,7 @@ Provision Complete`;
                       <span>NO → Create Account + CPM + Reconciliation</span>
                     </div>
                     <p className="text-[11px] text-amber-700">
-                      Store endpoint credential in Vault & activate CPM
-                      automatic password rotation.
+                      Store endpoint credential in Vault & activate CPM automatic password rotation.
                     </p>
                   </div>
 
@@ -425,8 +370,7 @@ Provision Complete`;
                       <span>YES → Success</span>
                     </div>
                     <p className="text-[11px] text-emerald-700">
-                      Account already vaulted. Verify status and complete
-                      request.
+                      Account already vaulted. Verify status and complete request.
                     </p>
                   </div>
                 </div>
@@ -459,8 +403,7 @@ Provision Complete`;
                     2. Privilege Access Architecture & Membership Hierarchy
                   </h3>
                   <p className="text-xs text-slate-500">
-                    Relationship model between CyberArk Vault identities, Safes,
-                    managed privileged accounts, and target servers.
+                    Relationship model between CyberArk Vault identities, Safes, managed privileged accounts, and target servers.
                   </p>
                 </div>
               </div>
@@ -473,20 +416,14 @@ Provision Complete`;
             <div className="bg-slate-900 text-slate-100 rounded-lg p-6 font-mono text-xs space-y-8 border border-slate-800 shadow-inner">
               {/* Level 1: CyberArk System & User */}
               <div className="flex flex-col items-center space-y-2">
-                <div className="text-[10px] text-blue-400 font-bold uppercase tracking-widest">
-                  Central Vault Identity
-                </div>
-                <div className="bg-[#00205F] border border-[#005DB6] text-white px-6 py-3 rounded-md text-center shadow-md w-64">
+                <div className="text-[10px] text-blue-400 font-bold uppercase tracking-widest">Central Vault Identity</div>
+                <div className="bg-[#00205F] border border-[#005DB6] text-white px-6 py-3 rounded-md text-center shadow-md w-64 max-w-full">
                   <div className="font-bold text-xs text-blue-200 flex items-center justify-center gap-1.5">
                     <User className="w-3.5 h-3.5 text-blue-300" />
                     <span>CyberArk User</span>
                   </div>
-                  <div className="text-sm font-extrabold text-white mt-0.5">
-                    soham.khanna
-                  </div>
-                  <div className="text-[10px] text-blue-300/80 mt-1">
-                    Role: Privilege Cloud User
-                  </div>
+                  <div className="text-sm font-extrabold text-white mt-0.5">soham.khanna</div>
+                  <div className="text-[10px] text-blue-300/80 mt-1">Role: Privilege Cloud User</div>
                 </div>
 
                 <div className="h-6 w-0.5 bg-blue-500/50"></div>
@@ -498,20 +435,14 @@ Provision Complete`;
 
               {/* Level 2: Target Safe Container */}
               <div className="flex flex-col items-center space-y-2">
-                <div className="text-[10px] text-amber-400 font-bold uppercase tracking-widest">
-                  Isolated Vault Container
-                </div>
-                <div className="bg-amber-950/60 border border-amber-600/60 text-amber-100 px-8 py-3.5 rounded-md text-center shadow-md w-80">
+                <div className="text-[10px] text-amber-400 font-bold uppercase tracking-widest">Isolated Vault Container</div>
+                <div className="bg-amber-950/60 border border-amber-600/60 text-amber-100 px-6 sm:px-8 py-3.5 rounded-md text-center shadow-md w-80 max-w-full">
                   <div className="font-bold text-xs text-amber-400 flex items-center justify-center gap-1.5">
                     <FolderLock className="w-4 h-4 text-amber-300" />
                     <span>TARGET SAFE</span>
                   </div>
-                  <div className="text-base font-extrabold text-amber-200 mt-0.5 tracking-tight">
-                    SAFE_PROD_WINDOWS
-                  </div>
-                  <div className="text-[10px] text-amber-300/80 mt-1">
-                    CPM Engine: Enabled | Retention: 7 Days
-                  </div>
+                  <div className="text-base font-extrabold text-amber-200 mt-0.5 tracking-tight">SAFE_PROD_WINDOWS</div>
+                  <div className="text-[10px] text-amber-300/80 mt-1">CPM Engine: Enabled | Retention: 7 Days</div>
                 </div>
 
                 <div className="h-8 w-0.5 bg-amber-500/50"></div>
@@ -526,25 +457,19 @@ Provision Complete`;
                   <div className="bg-slate-800/90 border border-emerald-500/40 rounded p-3 text-center space-y-1">
                     <Key className="w-4 h-4 text-emerald-400 mx-auto" />
                     <div className="font-bold text-emerald-200">Admin1</div>
-                    <div className="text-[10px] text-slate-400">
-                      Local Admin Credential
-                    </div>
+                    <div className="text-[10px] text-slate-400">Local Admin Credential</div>
                   </div>
 
                   <div className="bg-slate-800/90 border border-emerald-500/40 rounded p-3 text-center space-y-1">
                     <Key className="w-4 h-4 text-emerald-400 mx-auto" />
                     <div className="font-bold text-emerald-200">Admin2</div>
-                    <div className="text-[10px] text-slate-400">
-                      Domain Service Account
-                    </div>
+                    <div className="text-[10px] text-slate-400">Domain Service Account</div>
                   </div>
 
                   <div className="bg-slate-800/90 border border-emerald-500/40 rounded p-3 text-center space-y-1">
                     <Key className="w-4 h-4 text-emerald-400 mx-auto" />
                     <div className="font-bold text-emerald-200">SQLAdmin</div>
-                    <div className="text-[10px] text-slate-400">
-                      Database SA Privileged
-                    </div>
+                    <div className="text-[10px] text-slate-400">Database SA Privileged</div>
                   </div>
                 </div>
               </div>
@@ -554,18 +479,12 @@ Provision Complete`;
                 <div className="h-6 w-0.5 bg-slate-600"></div>
                 <ArrowDown className="w-4 h-4 text-slate-400 -mt-2" />
 
-                <div className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">
-                  Destination Infrastructure
-                </div>
-                <div className="bg-slate-800 border border-slate-700 text-slate-200 px-6 py-3 rounded-md text-center shadow-md w-72 flex items-center justify-center gap-2">
+                <div className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Destination Infrastructure</div>
+                <div className="bg-slate-800 border border-slate-700 text-slate-200 px-6 py-3 rounded-md text-center shadow-md w-72 max-w-full flex items-center justify-center gap-2">
                   <Server className="w-4 h-4 text-blue-400 shrink-0" />
                   <div>
-                    <div className="font-bold text-xs text-white">
-                      Windows Server
-                    </div>
-                    <div className="text-[10px] text-slate-400 font-mono">
-                      dc01.prod.local (10.0.0.1)
-                    </div>
+                    <div className="font-bold text-xs text-white">Windows Server</div>
+                    <div className="text-[10px] text-slate-400 font-mono">dc01.prod.local (10.0.0.1)</div>
                   </div>
                 </div>
               </div>
@@ -583,22 +502,15 @@ Provision Complete`;
                   Provisioning Flowchart (Raw Text Diagram)
                 </h3>
                 <p className="text-xs text-slate-500">
-                  Clean ASCII rendering suitable for documentation, markdown
-                  files, and commit logs.
+                  Clean ASCII rendering suitable for documentation, markdown files, and commit logs.
                 </p>
               </div>
               <button
-                onClick={() => handleCopy(rawFlowchartText, "flowchart")}
+                onClick={() => handleCopy(rawFlowchartText, 'flowchart')}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-[#00205F] hover:bg-[#00338D] text-white text-xs font-semibold rounded-md transition-colors"
               >
-                {copiedFlowchart ? (
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                ) : (
-                  <Copy className="w-3.5 h-3.5 text-blue-200" />
-                )}
-                <span>
-                  {copiedFlowchart ? "Copied Diagram!" : "Copy Flowchart"}
-                </span>
+                {copiedFlowchart ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-blue-200" />}
+                <span>{copiedFlowchart ? 'Copied Diagram!' : 'Copy Flowchart'}</span>
               </button>
             </div>
 
@@ -615,24 +527,15 @@ Provision Complete`;
                   Privilege Membership Architecture (Raw Text Diagram)
                 </h3>
                 <p className="text-xs text-slate-500">
-                  ASCII structure diagram showing user to safe to account server
-                  mapping.
+                  ASCII structure diagram showing user to safe to account server mapping.
                 </p>
               </div>
               <button
-                onClick={() => handleCopy(rawArchitectureText, "arch")}
+                onClick={() => handleCopy(rawArchitectureText, 'arch')}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-[#00205F] hover:bg-[#00338D] text-white text-xs font-semibold rounded-md transition-colors"
               >
-                {copiedArchitecture ? (
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                ) : (
-                  <Copy className="w-3.5 h-3.5 text-blue-200" />
-                )}
-                <span>
-                  {copiedArchitecture
-                    ? "Copied Architecture!"
-                    : "Copy Architecture"}
-                </span>
+                {copiedArchitecture ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-blue-200" />}
+                <span>{copiedArchitecture ? 'Copied Architecture!' : 'Copy Architecture'}</span>
               </button>
             </div>
 
@@ -649,11 +552,7 @@ Provision Complete`;
         <div className="space-y-1">
           <span className="font-bold text-[#00205F]">Integration Note:</span>
           <p className="text-slate-600 leading-relaxed">
-            {/* (<code className="font-mono bg-blue-100/80 px-1 py-0.5 rounded text-[#00338D]"></code>) */}
-            All CyberArk PAM operations performed by this app call the backend
-            CyberArk PAM API gateway . Operations maintain idempotency, ensuring
-            duplicate requests update or verify existing configurations without
-            throwing breaking vault errors.
+            All CyberArk PAM operations performed by this app call the backend CyberArk PAM API gateway (<code className="font-mono bg-blue-100/80 px-1 py-0.5 rounded text-[#00338D]">/api/cyberark/*</code>). Operations maintain idempotency, ensuring duplicate requests update or verify existing configurations without throwing breaking vault errors.
           </p>
         </div>
       </div>

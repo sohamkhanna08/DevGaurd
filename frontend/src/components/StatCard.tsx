@@ -45,14 +45,14 @@ export const StatCard: React.FC<StatCardProps> = ({
       </div>
 
       {(trend || subtext) && (
-        <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+        <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs gap-2">
           {trend && (
-            <span className={`px-2 py-0.5 rounded font-medium text-[11px] ${trendClass}`}>
+            <span className={`px-2 py-0.5 rounded font-medium text-[11px] whitespace-nowrap shrink-0 ${trendClass}`}>
               {trend}
             </span>
           )}
           {subtext && (
-            <span className="text-slate-500 font-normal truncate ml-auto">
+            <span className="text-slate-500 font-normal truncate ml-auto text-right">
               {subtext}
             </span>
           )}

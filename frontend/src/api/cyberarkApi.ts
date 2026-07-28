@@ -1,62 +1,3 @@
-// import axios from 'axios';
-// import { OnboardingRequestPayload, OnboardingResponse, AuditLogEntry } from '../types';
-
-// const PRIMARY_API_URL = 'http://localhost:4444/api/onboarding';
-// const FALLBACK_API_URL = '/api/onboarding';
-
-// export async function submitOnboardingRequest(
-//   payload: OnboardingRequestPayload
-// ): Promise<OnboardingResponse> {
-//   try {
-//     // Attempt primary URL first (http://localhost:4444/api/onboarding as specified)
-//     const response = await axios.post<OnboardingResponse>(PRIMARY_API_URL, payload, {
-//       timeout: 10000,
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     });
-//     return response.data;
-//   } catch (primaryError) {
-//     console.warn('Primary endpoint http://localhost:4444/api/onboarding failed or unreachable, trying relative /api/onboarding:', primaryError);
-//     try {
-//       // Fallback to relative /api/onboarding
-//       const fallbackResponse = await axios.post<OnboardingResponse>(FALLBACK_API_URL, payload, {
-//         timeout: 10000,
-//         headers: {
-//           'Content-Type': 'application/json'
-//         }
-//       });
-//       return fallbackResponse.data;
-//     } catch (fallbackError: any) {
-//       if (fallbackError.response && fallbackError.response.data) {
-//         return fallbackError.response.data as OnboardingResponse;
-//       }
-//       return {
-//         success: false,
-//         message: fallbackError.message || 'Failed to communicate with CyberArk PAM backend service.'
-//       };
-//     }
-//   }
-// }
-
-// export async function checkBackendHealth(): Promise<boolean> {
-//   try {
-//     await axios.get('/api/health', { timeout: 3000 });
-//     return true;
-//   } catch {
-//     return false;
-//   }
-// }
-
-// export async function fetchAuditLogs(): Promise<AuditLogEntry[]> {
-//   try {
-//     const res = await axios.get('/api/audit-logs');
-//     return res.data;
-//   } catch {
-//     return [];
-//   }
-// }
-
 import axios from "axios";
 import {
   OnboardingRequestPayload,
@@ -91,7 +32,7 @@ export async function submitOnboardingRequest(
           success: false,
           message:
             error.response.data?.message ||
-            "Only administrators are authorized to perform CyberArk onboarding. Please log in with an administrator account to use this feature.",
+            "Please log in with an administrator account to perform CyberArk onboarding.",
         };
       }
 
@@ -120,7 +61,9 @@ export async function checkBackendHealth(): Promise<boolean> {
 
 export async function fetchAuditLogs(): Promise<AuditLogsResponse> {
   try {
-    const res = await axios.get<AuditLogsResponse>(`${API_BASE}/api/audit-logs`);
+    const res = await axios.get<AuditLogsResponse>(
+      `${API_BASE}/api/audit-logs`,
+    );
     return res.data;
   } catch {
     return {

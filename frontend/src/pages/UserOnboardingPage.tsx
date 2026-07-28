@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Rocket,
   Key,
@@ -14,28 +14,37 @@ import {
   FolderCheck,
   CheckCircle2,
   Clock,
-  Code
-} from 'lucide-react';
-import { OnboardingRequestPayload, OnboardingResponse, OnboardingSuccessResponse } from '../types';
-import { submitOnboardingRequest } from '../api/cyberarkApi';
-import { StepCard } from '../components/StepCard';
-import { StatusBadge } from '../components/StatusBadge';
-import { ErrorBanner } from '../components/ErrorBanner';
-import { LoadingOverlay } from '../components/LoadingOverlay';
-import { JSONViewer } from '../components/JSONViewer';
-import { copyToClipboard, downloadJsonFile, formatDate, formatDuration } from '../utils/formatters';
+  Code,
+} from "lucide-react";
+import {
+  OnboardingRequestPayload,
+  OnboardingResponse,
+  OnboardingSuccessResponse,
+} from "../types";
+import { submitOnboardingRequest } from "../api/cyberarkApi";
+import { StepCard } from "../components/StepCard";
+import { StatusBadge } from "../components/StatusBadge";
+import { ErrorBanner } from "../components/ErrorBanner";
+import { LoadingOverlay } from "../components/LoadingOverlay";
+import { JSONViewer } from "../components/JSONViewer";
+import {
+  copyToClipboard,
+  downloadJsonFile,
+  formatDate,
+  formatDuration,
+} from "../utils/formatters";
 
 export const UserOnboardingPage: React.FC = () => {
   // Form State
-  const [loginName, setLoginName] = useState<string>('John');
-  const [suffix, setSuffix] = useState<string>('cyberark.cloud.43372');
-  const [email, setEmail] = useState<string>('john.smith@enterprise.com');
-  const [lastName, setLastName] = useState<string>('Smith');
+  const [loginName, setLoginName] = useState<string>("");
+  const [suffix, setSuffix] = useState<string>("cyberark.cloud.43372");
+  const [email, setEmail] = useState<string>("john.smith@enterprise.com");
+  const [lastName, setLastName] = useState<string>("Smith");
 
   const [account, setAccount] = useState({
-    username: 'SVC_PAM_PROD',
-    platformId: 'kpmgtest_domainaccounts',
-    address: 'dc01.prod.local'
+    username: "SVC_PAM_PROD",
+    platformId: "kpmgtest_domainaccounts",
+    address: "dc01.prod.local",
   });
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -44,12 +53,14 @@ export const UserOnboardingPage: React.FC = () => {
   const [copiedId, setCopiedId] = useState<boolean>(false);
   const [copiedJson, setCopiedJson] = useState<boolean>(false);
 
-  const handleAccountChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleAccountChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
-    const field = name.replace('account.', '');
+    const field = name.replace("account.", "");
     setAccount((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
   };
 
@@ -65,7 +76,7 @@ export const UserOnboardingPage: React.FC = () => {
       email: email.trim(),
       firstName: loginName.trim(),
       lastName: lastName.trim(),
-      account
+      account,
     };
 
     try {
@@ -75,13 +86,17 @@ export const UserOnboardingPage: React.FC = () => {
       if (res.success) {
         setResponse(res);
       } else {
-        setErrorMessage(res.message || 'Onboarding request failed.');
+        setErrorMessage(res.message || "Onboarding request failed.");
         setResponse(res);
       }
     } catch (err: any) {
       setIsLoading(false);
-      setErrorMessage(err.message || 'Network error executing onboarding API.');
+      setErrorMessage(err.message || "Network error executing onboarding API.");
     }
+
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    // }, 2000);
   };
 
   const handleCopyRequestId = async (id: string) => {
@@ -105,9 +120,12 @@ export const UserOnboardingPage: React.FC = () => {
   const successRes = isSuccess ? (response as OnboardingSuccessResponse) : null;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 relative min-h-125">
       {/* Loading Overlay */}
-      <LoadingOverlay isLoading={isLoading} message="Executing CyberArk Onboarding Workflow..." />
+      <LoadingOverlay
+        isLoading={isLoading}
+        message="Executing CyberArk Onboarding Workflow..."
+      />
 
       {/* Page Header */}
       <div className="border-b border-slate-200 pb-4">
@@ -115,7 +133,8 @@ export const UserOnboardingPage: React.FC = () => {
           User & Managed Account Onboarding
         </h1>
         <p className="text-xs text-slate-500 mt-1">
-          Automates EPV user creation, group memberships, vault safe allocation, and managed privilege accounts.
+          Automates EPV user creation, group memberships, vault safe allocation,
+          and managed privilege accounts.
         </p>
       </div>
 
@@ -164,7 +183,9 @@ export const UserOnboardingPage: React.FC = () => {
                     </div>
 
                     <div className="hidden sm:flex sm:col-span-1 items-center justify-center pb-2">
-                      <span className="text-slate-400 font-bold font-mono text-sm">@</span>
+                      <span className="text-slate-400 font-bold font-mono text-sm">
+                        @
+                      </span>
                     </div>
 
                     <div className="sm:col-span-5">
@@ -178,16 +199,23 @@ export const UserOnboardingPage: React.FC = () => {
                         required
                         className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md font-mono text-slate-800 focus:outline-none focus:border-[#005DB6] disabled:opacity-50"
                       >
-                        <option value="cyberark.cloud.43372">cyberark.cloud.43372</option>
+                        <option value="cyberark.cloud.43372">
+                          cyberark.cloud.43372
+                        </option>
                         <option value="kpmg">kpmg</option>
                       </select>
                     </div>
                   </div>
                   <p className="text-[11px] text-slate-500 mt-1.5 font-mono">
-                    Constructed CyberArk Username: <span className="font-bold text-[#00338D] bg-blue-50 px-1.5 py-0.5 rounded border border-blue-100">{loginName ? loginName+'@'+suffix : "Please Enter Login Name"}</span>
+                    Constructed CyberArk Username:{" "}
+                    <span className="font-bold text-[#00338D] bg-blue-50 px-1.5 py-0.5 rounded border border-blue-100 break-all inline-block max-w-full">
+                      {loginName
+                        ? loginName + "@" + suffix
+                        : "Please Enter Login Name"}
+                    </span>
                   </p>
                 </div>
-                
+
                 {/* Last Name */}
                 <div>
                   <label className="text-[11px] font-semibold text-slate-600 uppercase tracking-wider block mb-1">
@@ -220,8 +248,6 @@ export const UserOnboardingPage: React.FC = () => {
                     className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-md text-slate-800 focus:outline-none focus:border-[#005DB6] disabled:opacity-50"
                   />
                 </div>
-
-
               </div>
             </div>
 
@@ -323,67 +349,120 @@ export const UserOnboardingPage: React.FC = () => {
                 <Clock className="w-4 h-4 text-[#005DB6]" />
                 Provisioning Timeline
               </h3>
-              <span className="text-[10px] font-mono text-slate-400">Live Feed</span>
+              <span className="text-[10px] font-mono text-slate-400">
+                Live Feed
+              </span>
             </div>
 
             <div className="space-y-4">
               {/* Stage 1 */}
               <div className="flex items-start gap-3 text-xs">
-                <div className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? 'bg-emerald-500 border-emerald-600' : isLoading ? 'bg-blue-500 border-blue-600 animate-ping' : 'bg-slate-200 border-slate-300'}`} />
+                <div
+                  className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? "bg-emerald-500 border-emerald-600" : isLoading ? "bg-blue-500 border-blue-600 animate-ping" : "bg-slate-200 border-slate-300"}`}
+                />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <p className="font-semibold text-slate-800">User Provisioning</p>
-                    <StatusBadge status={isSuccess ? 'SUCCESS' : isLoading ? 'IN_PROGRESS' : 'PENDING'} size="sm" />
+                    <p className="font-semibold text-slate-800">
+                      User Provisioning
+                    </p>
+                    <StatusBadge
+                      status={
+                        isSuccess
+                          ? "SUCCESS"
+                          : isLoading
+                            ? "IN_PROGRESS"
+                            : "PENDING"
+                      }
+                      size="sm"
+                    />
                   </div>
-                  <p className="text-[11px] text-slate-500 mt-0.5">Creating or verifying user account in CyberArk Vault.</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">
+                    Creating or verifying user account in CyberArk Vault.
+                  </p>
                 </div>
               </div>
 
               {/* Stage 2 */}
               <div className="flex items-start gap-3 text-xs">
-                <div className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? 'bg-emerald-500 border-emerald-600' : 'bg-slate-200 border-slate-300'}`} />
+                <div
+                  className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? "bg-emerald-500 border-emerald-600" : "bg-slate-200 border-slate-300"}`}
+                />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <p className="font-semibold text-slate-800">Group Membership</p>
-                    <StatusBadge status={isSuccess ? 'SUCCESS' : 'PENDING'} size="sm" />
+                    <p className="font-semibold text-slate-800">
+                      Group Membership
+                    </p>
+                    <StatusBadge
+                      status={isSuccess ? "SUCCESS" : "PENDING"}
+                      size="sm"
+                    />
                   </div>
-                  <p className="text-[11px] text-slate-500 mt-0.5">Assigning user to required Administrative groups.</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">
+                    Assigning user to required Administrative groups.
+                  </p>
                 </div>
               </div>
 
               {/* Stage 3 */}
               <div className="flex items-start gap-3 text-xs">
-                <div className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? 'bg-emerald-500 border-emerald-600' : 'bg-slate-200 border-slate-300'}`} />
+                <div
+                  className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? "bg-emerald-500 border-emerald-600" : "bg-slate-200 border-slate-300"}`}
+                />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <p className="font-semibold text-slate-800">Safe Creation</p>
-                    <StatusBadge status={isSuccess ? 'SUCCESS' : 'PENDING'} size="sm" />
+                    <p className="font-semibold text-slate-800">
+                      Safe Creation
+                    </p>
+                    <StatusBadge
+                      status={isSuccess ? "SUCCESS" : "PENDING"}
+                      size="sm"
+                    />
                   </div>
-                  <p className="text-[11px] text-slate-500 mt-0.5">Allocating vault storage (Safe) for secrets.</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">
+                    Allocating vault storage (Safe) for secrets.
+                  </p>
                 </div>
               </div>
 
               {/* Stage 4 */}
               <div className="flex items-start gap-3 text-xs">
-                <div className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? 'bg-emerald-500 border-emerald-600' : 'bg-slate-200 border-slate-300'}`} />
+                <div
+                  className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? "bg-emerald-500 border-emerald-600" : "bg-slate-200 border-slate-300"}`}
+                />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <p className="font-semibold text-slate-800">Safe Membership</p>
-                    <StatusBadge status={isSuccess ? 'SUCCESS' : 'PENDING'} size="sm" />
+                    <p className="font-semibold text-slate-800">
+                      Safe Membership
+                    </p>
+                    <StatusBadge
+                      status={isSuccess ? "SUCCESS" : "PENDING"}
+                      size="sm"
+                    />
                   </div>
-                  <p className="text-[11px] text-slate-500 mt-0.5">Granting user permissions to the newly created Safe.</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">
+                    Granting user permissions to the newly created Safe.
+                  </p>
                 </div>
               </div>
 
               {/* Stage 5 */}
               <div className="flex items-start gap-3 text-xs">
-                <div className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? 'bg-emerald-500 border-emerald-600' : 'bg-slate-200 border-slate-300'}`} />
+                <div
+                  className={`w-3 h-3 rounded-full mt-1 border-2 shrink-0 ${isSuccess ? "bg-emerald-500 border-emerald-600" : "bg-slate-200 border-slate-300"}`}
+                />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <p className="font-semibold text-slate-800">Managed Account</p>
-                    <StatusBadge status={isSuccess ? 'SUCCESS' : 'PENDING'} size="sm" />
+                    <p className="font-semibold text-slate-800">
+                      Managed Account
+                    </p>
+                    <StatusBadge
+                      status={isSuccess ? "SUCCESS" : "PENDING"}
+                      size="sm"
+                    />
                   </div>
-                  <p className="text-[11px] text-slate-500 mt-0.5">Onboarding the target account into the PAM safe.</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">
+                    Onboarding the target account into the PAM safe.
+                  </p>
                 </div>
               </div>
             </div>
@@ -392,9 +471,12 @@ export const UserOnboardingPage: React.FC = () => {
           {/* Security at Scale Promo Card */}
           <div className="relative rounded-md overflow-hidden bg-linear-to-r from-[#00205F] to-[#005DB6] p-6 text-white shadow-md">
             <div className="relative z-10 space-y-1">
-              <h3 className="text-base font-bold tracking-tight">Security at Scale</h3>
+              <h3 className="text-base font-bold tracking-tight">
+                Security at Scale
+              </h3>
               <p className="text-xs text-blue-100/80">
-                Automating privileged identities and zero-trust policies for the modern enterprise workforce.
+                Automating privileged identities and zero-trust policies for the
+                modern enterprise workforce.
               </p>
             </div>
           </div>
@@ -423,20 +505,33 @@ export const UserOnboardingPage: React.FC = () => {
                 onClick={() => handleCopyRequestId(successRes.requestId)}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded border border-slate-300 transition-colors"
               >
-                {copiedId ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedId ? 'Copied ID' : 'Copy Request ID'}</span>
+                {copiedId ? (
+                  <Check className="w-3.5 h-3.5 text-emerald-600" />
+                ) : (
+                  <Copy className="w-3.5 h-3.5" />
+                )}
+                <span>{copiedId ? "Copied ID" : "Copy Request ID"}</span>
               </button>
 
               <button
                 onClick={handleCopyResponseJson}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded border border-slate-300 transition-colors"
               >
-                {copiedJson ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Code className="w-3.5 h-3.5" />}
-                <span>{copiedJson ? 'Copied JSON' : 'Copy Response JSON'}</span>
+                {copiedJson ? (
+                  <Check className="w-3.5 h-3.5 text-emerald-600" />
+                ) : (
+                  <Code className="w-3.5 h-3.5" />
+                )}
+                <span>{copiedJson ? "Copied JSON" : "Copy Response JSON"}</span>
               </button>
 
               <button
-                onClick={() => downloadJsonFile(`onboarding_${successRes.requestId}.json`, successRes)}
+                onClick={() =>
+                  downloadJsonFile(
+                    `onboarding_${successRes.requestId}.json`,
+                    successRes,
+                  )
+                }
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-[#00338D] hover:bg-[#00205F] text-white text-xs font-semibold rounded transition-colors shadow-xs"
               >
                 <Download className="w-3.5 h-3.5" />
@@ -448,20 +543,36 @@ export const UserOnboardingPage: React.FC = () => {
           {/* Execution Metadata Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-[#F4F3FB] border border-[#E2E2EA] rounded-md text-xs font-mono">
             <div>
-              <span className="text-[10px] text-slate-500 uppercase font-semibold block">Execution Duration</span>
-              <span className="font-bold text-[#005DB6] mt-0.5 block">{formatDuration(successRes.durationMs)}</span>
+              <span className="text-[10px] text-slate-500 uppercase font-semibold block">
+                Execution Duration
+              </span>
+              <span className="font-bold text-[#005DB6] mt-0.5 block">
+                {formatDuration(successRes.durationMs)}
+              </span>
             </div>
             <div>
-              <span className="text-[10px] text-slate-500 uppercase font-semibold block">Requested Time</span>
-              <span className="text-slate-800 mt-0.5 block">{formatDate(successRes.requestedAt)}</span>
+              <span className="text-[10px] text-slate-500 uppercase font-semibold block">
+                Requested Time
+              </span>
+              <span className="text-slate-800 mt-0.5 block">
+                {formatDate(successRes.requestedAt)}
+              </span>
             </div>
             <div>
-              <span className="text-[10px] text-slate-500 uppercase font-semibold block">Completed Time</span>
-              <span className="text-slate-800 mt-0.5 block">{formatDate(successRes.completedAt)}</span>
+              <span className="text-[10px] text-slate-500 uppercase font-semibold block">
+                Completed Time
+              </span>
+              <span className="text-slate-800 mt-0.5 block">
+                {formatDate(successRes.completedAt)}
+              </span>
             </div>
             <div>
-              <span className="text-[10px] text-slate-500 uppercase font-semibold block">Overall Status</span>
-              <span className="font-bold text-emerald-700 mt-0.5 block">SUCCESS</span>
+              <span className="text-[10px] text-slate-500 uppercase font-semibold block">
+                Overall Status
+              </span>
+              <span className="font-bold text-emerald-700 mt-0.5 block">
+                SUCCESS
+              </span>
             </div>
           </div>
 
@@ -483,15 +594,16 @@ export const UserOnboardingPage: React.FC = () => {
             )}
 
             {/* Step 2: Group Memberships */}
-            {successRes.steps?.groupMemberships && successRes.steps.groupMemberships.length > 0 && (
-              <StepCard
-                stepNumber={2}
-                title="Group Memberships"
-                iconName="group"
-                status={successRes.steps.groupMemberships[0].status}
-                data={successRes.steps.groupMemberships[0]}
-              />
-            )}
+            {successRes.steps?.groupMemberships &&
+              successRes.steps.groupMemberships.length > 0 && (
+                <StepCard
+                  stepNumber={2}
+                  title="Group Memberships"
+                  iconName="group"
+                  status={successRes.steps.groupMemberships[0].status}
+                  data={successRes.steps.groupMemberships[0]}
+                />
+              )}
 
             {/* Step 3: Safe */}
             {successRes.steps?.safe && (

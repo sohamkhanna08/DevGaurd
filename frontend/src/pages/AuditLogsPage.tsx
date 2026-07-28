@@ -224,7 +224,10 @@ export const AuditLogsPage: React.FC = () => {
     {
       header: "Requested For",
       cell: (item) => {
-        const reqBy = `${item.request?.firstName || ''} ${item.request?.lastName || ''}`.trim() || item.request?.username || 'N/A';
+        const reqBy =
+          `${item.request?.firstName || ""} ${item.request?.lastName || ""}`.trim() ||
+          item.request?.username ||
+          "N/A";
         // const reqBy = "Soham Khanna";
         return (
           <div className="flex items-center gap-2">
@@ -329,7 +332,7 @@ export const AuditLogsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-2 shrink-0 flex-wrap sm:flex-nowrap">
           <button
             onClick={handleExportCSV}
             className="flex items-center gap-1.5 px-3 py-2 bg-white border border-[#DCE1E6] hover:bg-slate-50 text-slate-700 text-xs font-semibold rounded-md shadow-2xs transition-colors"

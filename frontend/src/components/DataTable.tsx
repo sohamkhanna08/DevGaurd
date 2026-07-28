@@ -26,11 +26,11 @@ export function DataTable<T>({
 }: DataTableProps<T>) {
   return (
     <div className="w-full overflow-x-auto rounded-md border border-[#DCE1E6] bg-white shadow-xs">
-      <table className="w-full text-left border-collapse text-xs">
+      <table className="w-full min-w-150 text-left border-collapse text-xs">
         <thead>
           <tr className="bg-[#F5F7F9] border-b border-[#DCE1E6] text-slate-600 font-semibold uppercase tracking-wider">
             {columns.map((col, idx) => (
-              <th key={idx} className={`py-3.5 px-4 ${col.className || ''}`}>
+              <th key={idx} className={`py-3.5 px-4 whitespace-nowrap ${col.className || ''}`}>
                 {col.header}
               </th>
             ))}
@@ -41,7 +41,7 @@ export function DataTable<T>({
             Array.from({ length: 4 }).map((_, rIdx) => (
               <tr key={rIdx} className="animate-pulse">
                 {columns.map((_, cIdx) => (
-                  <td key={cIdx} className="py-4 px-4">
+                  <td key={cIdx} className="py-4 px-4 whitespace-nowrap">
                     <div className="h-4 bg-slate-100 rounded w-3/4" />
                   </td>
                 ))}
@@ -63,7 +63,7 @@ export function DataTable<T>({
                 }`}
               >
                 {columns.map((col, cIdx) => (
-                  <td key={cIdx} className={`py-3 px-4 text-slate-800 ${col.className || ''}`}>
+                  <td key={cIdx} className={`py-3 px-4 text-slate-800 whitespace-nowrap ${col.className || ''}`}>
                     {col.cell
                       ? col.cell(item)
                       : col.accessorKey
