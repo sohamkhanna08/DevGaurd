@@ -85,7 +85,7 @@ export const Sidebar: React.FC = () => {
                 title={
                   isCollapsed && !isMobileOpen
                     ? "Click to Expand Sidebar"
-                    : "CyberArk PAM"
+                    : "Dev Gaurd"
                 }
               >
                 <ShieldAlert className="w-5 h-5 text-white" />
@@ -93,10 +93,10 @@ export const Sidebar: React.FC = () => {
               {(!isCollapsed || isMobileOpen) && (
                 <div className="transition-opacity duration-200 min-w-0">
                   <h1 className="font-bold text-base leading-tight tracking-tight text-white whitespace-nowrap truncate">
-                    CyberArk PAM
+                    Dev Gaurd
                   </h1>
                   <p className="text-[10px] text-blue-200/80 font-mono tracking-wider uppercase whitespace-nowrap truncate">
-                    Operations Portal
+                    PAM Automation Portal
                   </p>
                 </div>
               )}
