@@ -1,6 +1,6 @@
-const { createToken } = require("../auth/jwt");
 const bcrypt = require("bcrypt");
 const UserModel = require("../models/User");
+const { createToken } = require("../auth/jwt");
 
 const login = async (req, res) => {
   let { username, password } = req.body;
@@ -36,17 +36,17 @@ const login = async (req, res) => {
     // If user has entered correct username and password
     // provide jwt to the user
     let token = createToken({
-      username: user.username
+      username: user.username,
     });
 
     res.status(200).json({
       message: "Login success",
       token,
       user: {
-        id : user._id,
+        id: user._id,
         username: user.username,
-        role : user.role
-      }
+        role: user.role,
+      },
     });
   } catch (error) {
     res.status(500).json({
