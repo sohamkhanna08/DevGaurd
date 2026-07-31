@@ -96,7 +96,7 @@ export const TopNavbar: React.FC = () => {
         </div>
 
         {/* Action Icons */}
-        <div className="relative">
+        <div className="relative" ref={notificationRef}>
           <button
             onClick={() => setShowNotifications(!showNotifications)}
             className="p-1 sm:p-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-md relative transition-colors"
