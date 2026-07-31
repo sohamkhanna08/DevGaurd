@@ -361,6 +361,41 @@ const addUserToSafe = async (accessToken, safeName, username) => {
   }
 };
 
+const addAdminToSafe = async (accessToken, safeName, username) => {
+  try {
+    const url = `${process.env.CYBERARK_BASE_URL}/PasswordVault/API/Safes/${safeName}/Members`;
+
+    const data = await axios.post(
+      url,
+      {
+        memberName: username,
+        memberType: "User",
+        Permissions: {
+          UseAccounts: true,
+          RetrieveAccounts: true,
+          ListAccounts: true,
+          AddAccounts: true,
+          UpdateAccountContent: true,
+          manageSafe: true,
+          manageSafeMembers: true,
+        },
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+      },
+    );
+  } catch (error) {
+    if (error.response?.status === 401) {
+      throw new Error("Invalid or expired access token");
+    }
+
+    throw new Error("Error in adding admin to safe");
+  }
+};
+
 // Account Provisioning
 const checkAccountExists = async (accessToken, accountData, safeName) => {
   try {
@@ -566,7 +601,7 @@ const onboardUser = async (userData) => {
   );
 
   if (!isAdminInSafe) {
-    await addUserToSafe(accessToken, safe.safeName, adminUsername);
+    await addAdminToSafe(accessToken, safe.safeName, adminUsername);
   }
 
   // Step 7: Account Provisioning
