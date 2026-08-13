@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { useSidebar } from "../context/SidebarContext";
+import kpmgLogo from "../assets/KPMGLogo_new-e1686087607475-1.webp";
 
 export const Sidebar: React.FC = () => {
   const location = useLocation();
@@ -81,15 +82,20 @@ export const Sidebar: React.FC = () => {
                 onClick={
                   isCollapsed && !isMobileOpen ? toggleCollapse : undefined
                 }
-                className="w-9 h-9 rounded-md bg-[#005DB6] flex items-center justify-center text-white font-bold shadow-md shadow-[#00174B]/50 shrink-0 hover:bg-[#00468C] transition-colors cursor-pointer"
+                className="w-11 h-11 rounded-md bg-white flex items-center justify-center shadow-md shadow-[#00174B]/50 shrink-0 hover:bg-gray-100 transition-colors cursor-pointer overflow-hidden"
                 title={
                   isCollapsed && !isMobileOpen
                     ? "Click to Expand Sidebar"
-                    : "Dev Gaurd"
+                    : "DevGaurd"
                 }
               >
-                <ShieldAlert className="w-5 h-5 text-white" />
+                <img
+                  src={kpmgLogo}
+                  alt="KPMG"
+                  className="w-[42px] h-[42px] object-contain"
+                />
               </button>
+
               {(!isCollapsed || isMobileOpen) && (
                 <div className="transition-opacity duration-200 min-w-0">
                   <h1 className="font-bold text-base leading-tight tracking-tight text-white whitespace-nowrap truncate">
