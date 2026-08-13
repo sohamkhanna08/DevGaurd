@@ -1,7 +1,7 @@
 # DevGaurd — PAM Automation Portal
 
 <p align="center">
-  <img src="frontend/src/assets/kpmg-logo.png" alt="DevGaurd" width="180"/>
+  <img src="frontend/src/assets/KPMGLogo_new-e1686087607475-1.webp" alt="DevGaurd" width="180"/>
 </p>
 
 <p align="center">
