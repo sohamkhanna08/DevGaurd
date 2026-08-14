@@ -937,7 +937,7 @@ completed
 ```
 
 ---
-<a id="tech-stack"></a>
+<a id="-tech-stack"></a>
 # 🛠️ Tech Stack
 
 ## Frontend
@@ -1116,7 +1116,7 @@ DevGaurd/
 ```
 
 ---
-<a id="environment-variables"></a>
+<a id="-environment-variables"></a>
 # ⚙️ Environment Variables
 
 Create:
