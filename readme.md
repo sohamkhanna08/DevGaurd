@@ -33,38 +33,37 @@
 
 ---
 
-## 📑 Table of Contents
+# 📑 Table of Contents
 
-- [About the Project](#about-the-project)
-- [Why PAM Tools Are Needed](#why-pam-tools-are-needed)
-- [Industry Problems Addressed](#industry-problems-addressed)
-- [What is DevGaurd?](#what-is-devgaurd)
-- [Key Features](#key-features)
-- [Application Screenshots](#application-screenshots)
-- [Architecture](#architecture)
-- [PAM Provisioning Workflow](#pam-provisioning-workflow)
-- [Idempotency Model](#idempotency-model)
-- [CyberArk Object Model](#cyberark-object-model)
-- [Application Architecture](#application-architecture)
-- [Authentication & Authorization](#authentication--authorization)
-- [Auditability & Observability](#auditability--observability)
-- [Tech Stack](#tech-stack)
-- [API](#api)
-- [Repository Structure](#repository-structure)
-- [Workflow Response](#workflow-response)
-- [Environment Variables](#environment-variables)
-- [Getting Started](#getting-started)
-- [Security Considerations](#security-considerations)
-- [Failure & Recovery Model](#failure--recovery-model)
-- [Testing Strategy](#testing-strategy)
-- [Key Components](#key-components)
-- [Key Benefits](#key-benefits)
-- [Enterprise Evolution](#enterprise-evolution)
-- [Roadmap](#roadmap)
-- [Project Context](#project-context)
-- [Author](#author)
-- [License & Usage](#license--usage)
-- [Project Summary](#project-summary)
+- [About the Project](#-about-the-project)
+- [Why PAM Tools Are Needed](#-why-pam-tools-are-needed)
+- [Industry Problems Addressed](#-industry-problems-addressed)
+- [What is DevGaurd?](#-what-is-devgaurd)
+- [Key Features](#-key-features)
+- [Application Screenshots](#-application-screenshots)
+- [Architecture](#-architecture)
+- [PAM Provisioning Workflow](#-pam-provisioning-workflow)
+- [Idempotency Model](#-idempotency-model)
+- [CyberArk Object Model](#-cyberark-object-model)
+- [Application Architecture](#-application-architecture)
+- [Authentication and Authorization](#-authentication--authorization)
+- [Auditability and Observability](#-auditability--observability)
+- [Workflow Response](#-workflow-response)
+- [Tech Stack](#-tech-stack)
+- [API](#-api)
+- [Repository Structure](#-repository-structure)
+- [Environment Variables](#-environment-variables)
+- [Getting Started](#-getting-started)
+- [Security Considerations](#-security-considerations)
+- [Failure and Recovery Model](#-failure--recovery-model)
+- [Testing Strategy](#-testing-strategy)
+- [Key Components](#-key-components)
+- [Key Benefits](#-key-benefits)
+- [Enterprise Evolution](#-enterprise-evolution)
+- [Roadmap](#-roadmap)
+- [Project Context](#-project-context)
+- [Author](#-author)
+- [License and Usage](#-license--usage)
 
 ---
 
@@ -217,7 +216,7 @@ Submit Request
 ```
 
 ---
-
+<a id="-what-is-devgaurd"></a>
 # 🛡️ What is DevGaurd?
 
 DevGaurd converts a multi-step PAM onboarding process into a single workflow.
@@ -372,7 +371,7 @@ DevGaurd provides:
 - Separation between authentication and privileged workflow authorization
 
 ---
-
+<a id="-application-screenshots"></a>
 # 🖥️ Application Screenshots
 
 The portal is designed to give administrators a centralized operational view of PAM provisioning.
@@ -516,7 +515,7 @@ Show the application's workflow/architecture page.
 </p>
 
 ---
-
+<a id="-architecture"></a>
 # 🏗️ Architecture
 
 ```mermaid
@@ -691,7 +690,7 @@ The following workflow operations implement this pattern:
 | Account Reconciliation     | `reconcileAccount()`      |
 
 ---
-
+<a id="-cyberark-object-model"></a>
 # 🛡️ CyberArk Object Model
 
 DevGaurd automates relationships between CyberArk users, groups, Safes and managed accounts.
@@ -938,7 +937,7 @@ completed
 ```
 
 ---
-
+<a id="tech-stack"></a>
 # 🛠️ Tech Stack
 
 ## Frontend
@@ -1117,7 +1116,7 @@ DevGaurd/
 ```
 
 ---
-
+<a id="environment-variables"></a>
 # ⚙️ Environment Variables
 
 Create:
@@ -1492,7 +1491,7 @@ Potential enterprise integrations include:
 ```
 
 ---
-
+<a id="-roadmap"></a>
 # 🛣️ Roadmap
 
 - Workflow resume after failure
@@ -1530,6 +1529,7 @@ The project was developed as an engineering-focused solution around **Privileged
 
 The project demonstrates how repetitive PAM administration workflows can be transformed into a centralized, API-driven and observable application.
 
+<a id="-author"></a>
 # 👨‍💻 Author
 
 ## Soham Khanna
